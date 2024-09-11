@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript</title>
+  <style>
+     body {
+       font-size: 16px;
+     }
+     #container {
+       width: 600px;
+       height: 300px;
+       border: 1px solid red;
+       padding: 20px;
+       margin: 20px;
+     }
+  </style>
+</head>
+<body>
+  <div id="container">
+
+  </div>
+  <div>
+      <input id="inputbox" class="" value=""/>
+      <button onclick="writecontent()">Print Inpute Value</button>
+  </div>
+
+</body>
+
+<script>
+  // Javascript Systex
+  let container = document.getElementById("container");
+  let myElement = document.createElement("p");
+  myElement.setAttribute("id", "syntex");
+  container.appendChild(myElement);
+  myElement.innerHTML = "JavaScript Literals";
+  document.write(5 * 10 + 2 % 2);
+  document.write(" if we calculate "+ 5 + "and" + 5 + "is"+ 10)
+
+function writecontent() {
+  let InputValue = document.getElementById("inputbox").value;
+  document.getElementById("container").innerText = InputValue; 
+}
+</script>
+</html>

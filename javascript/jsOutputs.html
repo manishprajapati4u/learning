@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript</title>
+  <style>
+     body {
+       font-size: 16px;
+     }
+  </style>
+</head>
+<body>
+    <!-- Nothing to see here check -->
+</body>
+
+<script>
+    const myElement = document.createElement("div");
+    myElement.setAttribute("id", "demoId");
+    document.body.appendChild(myElement);
+    let content = document.getElementById("demoId");
+    content.innerHTML = "This is example of innerHTML";
+    document.write("This is example of document.write");
+    if(myElement){
+    window.alert("This is example of window.alert")
+    }
+    console.log('This is example of console.log')
+</script>
+</html>

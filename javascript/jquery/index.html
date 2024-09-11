@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  .bg-blue {
+      background-color: blue !important;
+  }
+  .bg-pink {
+      background-color: palevioletred !important;
+  }
+</style>
+
+<script>
+$(document).ready(function(){
+  let count = 0;
+  let box = $("#box");
+  $("#button").click(function(){
+     count = count + 1;
+    $("#value").text(count);      
+      if(count == 10) {
+        box.addClass('bg-black');
+      }
+      else if (count == 20) {
+         box.addClass('bg-blue');
+      }
+      else if (count == 25) {
+         box.addClass('bg-pink');
+      }
+     
+  });
+});
+
+</script>
+</head>
+<body>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="py-5">
+        <button id="button" class="btn btn-primary">Count</button>
+        <p id="text_content"></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+       <div id="box" class="bg-info rounded text-white h-100 d-flex justify-content-center align-items-center">
+          <span class="h1" id="value"></span>
+       </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

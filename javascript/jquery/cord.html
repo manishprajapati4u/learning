@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/9c664558d8.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  .bg-blue {
+      background-color: blue !important;
+  }
+  .bg-pink {
+      background-color: palevioletred !important;
+  }
+  .customInput {
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 40px;
+    position:relative;
+  }
+  .customInput input {
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding-left: 40px;
+  }
+  .customInput .icon {
+     position:absolute;
+     top: 10px;
+     left: 10px;
+  }
+  .customInput input:focus {
+    outline: 2px solid red;
+  }
+
+</style>
+</head>
+<body>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="py-5">
+        <button id="button" class="btn btn-primary">Count</button>
+        <p id="text_content"></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+       <div id="box" class="bg-info rounded text-white h-100 d-flex justify-content-center align-items-center">
+          <span class="h1" id="value"></span>
+       </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-6">
+      <button class="btn btn-primary" type="button" onclick="randomNum()">Generate Number</button>    
+    </div>
+      <div class="col-sm-6">
+        <div class="customInput overflow-hidden">
+          <i class="fa fa-home icon"></i>
+          <input id="numInput" class="" type="text" value="">
+          <span id="copyText" class="bg-success btn end-0 position-absolute px-3 py-2 rounded-0 top-0"><i class="fa fa-copy text-white"></i></span>
+        </div>
+        <div class="text-center mt-1">
+          <small id="successMsg" class="bg-success badge w-50 d-none">Value Copied</small>
+        </div>
+      </div>
+      
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    let count = 0;
+    let box = $("#box");
+    $("#button").click(function(){
+       count = count + 1;
+      $("#value").text(count);      
+        if(count == 10) {
+          box.addClass('bg-black');
+        }
+        else if (count == 20) {
+           box.addClass('bg-blue');
+        }
+        else if (count == 25) {
+           box.addClass('bg-pink');
+        }
+       
+    });
+  
+
+  });
+
+  function randomNum() {
+       let number = Math.random() * 100;
+       $('#numInput').val(number);
+      console.log(number);
+   }
+  
+   $('#copyText').click( function(){
+      const inputValue =  $("#numInput").val();
+      $('.customInput').css('border-color', 'green');
+      const clipboard = navigator.clipboard;
+      clipboard.writeText(inputValue);
+       const successMsg = $("#successMsg");
+       successMsg.removeClass('d-none').delay(400).css('display', 'none');
+   })
+  </script>
+</body>
+</html>

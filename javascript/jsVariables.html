@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript</title>
+  <style>
+     body {
+       font-size: 16px;
+     }
+     #container {
+       width: 600px;
+       height: 300px;
+       border: 1px solid red;
+       padding: 20px;
+       margin: 20px;
+     }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <p id="content"></p>
+    <p id="price"></p>
+  </div>
+</body>
+
+<script>
+ //automatically declared variables
+
+ x = 12;
+ y = 2;
+
+ z =  x * y;
+document.getElementById("content").innerText = z;
+
+// var keyword should only be used in code written for older browser
+
+let name = "Manish";
+let xa =  23;
+let xb =  2;
+
+let xc  = xa + xb;
+document.write(xc);
+
+// Const 
+
+const price1 = 10;
+const price2 = 20;
+
+let total = price1 + price2;
+document.getElementById("price").innerHTML = total;
+
+
+</script>
+</html>

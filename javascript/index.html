@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript</title>
+  <style>
+     body {
+       font-size: 16px;
+     }
+  </style>
+</head>
+<body>
+ <div>
+   <img id="imageUpdate" src="img/ricardo.webp" alt="Client Image" />
+ </div>
+
+ <button onclick="updateImage()">Update Image</button>
+ <button onclick="addstyle()">Add Style</button>
+
+
+<div>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+</div> 
+ 
+ <script>
+
+  let client1 = "img/TimPrinz.webp";
+  let image = document.getElementById("imageUpdate");
+
+  function updateImage() {
+     image.src= client1;
+  }
+
+  function addstyle() {
+    image.style.cssText = `
+    width: 150px;
+    height:150px;
+    border-radius:50%;
+    box-shadow: 2px 5px 10px #f7f7f7;
+    `;
+  }
+   document.getElementsByTagName("p")[3].innerHTML= "This is a Paragraph";
+    
+</script>
+</body>
+</html>

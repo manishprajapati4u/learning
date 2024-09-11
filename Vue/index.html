@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <title>My first Vue page</title>
+  <style>
+     body {
+       font-size: 16px;
+     }
+  </style>
+</head>
+<body>
+ <div id="content">
+    {{ message }}
+    <h1>{{ Math.ceil(Math.random()*24)}}</h1>
+ </div>
+
+ <script>
+    const myapp = Vue.createApp({
+      data() {
+        return {
+            message: "This is my First Vue code"
+        }
+      }
+    });
+
+myapp.mount("#content")
+</script>
+</body>
+</html>
