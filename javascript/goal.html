@@ -10,24 +10,20 @@
   </style>
 </head>
 <body>
-  <div id="app">
   <div class="container mx-auto border border-1 mt-10 p-10">
     <div class="">
         <label class="block">
           <span class="block text-lg mb-2 font-medium text-slate-700">Goal</span>
-          <input v-model="enteredValue" class="border h-10 w-full border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"/>
-          <button v-on:click="addGoal" class="bg-green-400 text-white px-3 py-2 rounded mt-4">Add Item</button>
+          <input class="border h-10 w-full border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"/>
+          <button class="bg-green-400 text-white px-3 py-2 rounded mt-4">Add Item</button>
         </label>
         <p id="error" class="mt-4 text-red-500 hidden">Please enter the value</p>
     </div>
     <div class="mt-10 block">
-        <ul>
-           <li class="border p-2 mb-2" v-for="goal in goals">{{goal}}</li>
-        </ul>
+        <ul></ul>
     </div>
   </div>
-</div>
-  <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js"></script> 
-  <script src="app.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
